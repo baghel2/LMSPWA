@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arvind_LMS</title>
+    <meta charset="UTF-8">
+    <!--<base href="/">-->
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Arvind_LMS">
+    <meta name="apple-mobile-web-app-title" content="Arvind_LMS">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Description" content="LMS by Arvind singh">
+    <meta name="theme-color" content="#ffff00" />
+    <link rel="icon" type="image/png" href="app/images/icons/icon-512x512.png">
+
+    <style>
+        html, body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif;
+        }
+    </style>
+
+</head>
+<body class="w3-red" ng-app="LMSApp">
+
+    <!-- Top container -->
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" ng-controller="LeaveController" ng-init="init()">
+
+        <!-- Header -->
+        <!--<header class="w3-container" style="padding-top:45px">
+            <h5><b>{{$scope.header}}</b>Welcome To LMS</h5>
+        </header>
+        <hr />-->
+
+        <div class="w3-top">
+            <div class="w3-bar w3-yellow w3-card">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu">||||<i class="fa fa-bars"></i></a>
+
+                <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+                <a href="#!/list" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ALL LEAVES</a>
+                <a href="#!/leavedetail" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADD LEAVE</a>
+                <a href="#!/employee" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EMPLOYEE</a>
+
+                <a href="#" class="w3-bar-item w3-button w3-right" title="Login">
+                    <img src="app/images/login.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar" onclick="document.getElementById('id01').style.display='block'" > <!---->
+                </a>
+
+            </div>
+
+           
+        </div>
+
+        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+        <div id="navDemo" class="w3-bar-block w3-yellow w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+            <a href="#!/list" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ALL LEAVES</a>
+            <a href="#!/leavedetail" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ADD LEAVE</a>
+            <a href="#!/employee" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">EMPLOYEE</a>
+
+        </div>
+
+       
+
+        <div ng-view style="padding-top:45px"></div>
+
+        <br>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-16 w3-light-grey" style="width:100%; bottom:0;">
+            <p>Designed By Arvind Singh</p>
+        </footer>
+
+        <!-- End page content -->
+
+
+
+
+
+        <div id="id01" class="w3-modal" >
+            <div class="w3-modal-content w3-card-4 w3-animate-top" style="max-width:600px">
+
+                <div class="w3-center">
+                    <br>
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-display-topright" title="Close Modal">×</span>X <!---->
+                    <img src="app/images/avatar3.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+                </div>
+
+                <div class="w3-container" >
+                    <div class="w3-section">
+                        <label><b>Username</b></label>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+                        <label><b>Password</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+                        <button class="w3-button w3-block w3-yellow w3-section w3-padding" type="submit" ng-click="Login()">Login</button>
+                    </div>
+                </div>
+
+                <!--<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+                <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+            </div>-->
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+        function openList() {
+            document.getElementById("LeaveDetails").style.display = "block";
+
+            var element, name, arr;
+            element = document.getElementById("LeaveDetails");
+            name = "w3-animate-top";
+            arr = element.className.split(" ");
+            if (arr.indexOf(name) == -1) {
+                element.className += " " + name;
+            }
+        }
+
+        function closeList() {
+            document.getElementById("LeaveDetails").style.display = "none";
+        }
+
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+
+
+
+    </script>
+    <script src="app/Scripts/angular.min.js"></script>
+    <script src="app/Scripts/angular-route.min.js"></script>
+    <script src="app/Scripts/Module/Module.js"></script>
+    <script src="app/Scripts/Services/LeaveServices.js"></script>
+    <script src="app/Scripts/Services/EmployeeServices.js"></script>
+    <script src="app/Scripts/Controller/LeaveController.js"></script>
+    <script src="app/Scripts/Controller/EmployeeController.js"></script>
+
+    <script src="index.js"></script>
+    <link href="app/css/style.css" rel="stylesheet" />
+</body>
+
+</html>

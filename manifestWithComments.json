@@ -1,0 +1,41 @@
+﻿{
+  // used in the app install
+  "name": "Arvind LMS Application",
+  // short_name is must provid, it is used for the user's home screen with icon, lancher and other palces also
+  "short_name": "Arvind_LMS",
+  //theme color for tollbar browser color
+  "theme_color": "#ffff00",
+  // when app is open from icon background color appears until the app is loaded
+  "background_color": "#ff0000",
+  // how app should appears on different devices
+  "display": "standalone",
+  "orientation": "portrait",
+  "Scope": "/",
+  // app's starting point when it is lanched
+  "start_url": "/",
+  // icons are used in places like the app launcher, home screen, splash screen etc.
+  "icons": [
+    {
+      "src": "app/images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "app/images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "app/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app/images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  //"splash_pages": null
+  "description": "Arvind leave management system."
+}
