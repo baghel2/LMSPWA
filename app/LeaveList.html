@@ -1,0 +1,51 @@
+﻿<div class="w3-container w3-light-grey w3-padding-16 w3-animate-top" ng-init="GetEmployee()">
+   
+    <h3 class="w3-border-bottom w3-border-light-gre w3-text-red">Recent User's Leaves</h3>
+    <!--<hr />-->
+    <ul class="w3-ul">
+        <li  ng-repeat="emp in Employees" style="padding-left:0;padding-right:0;"> <!--ng-click="GetLeaves(emp.Id)"-->
+            <span class="w3-xlarge w3-text-red">{{emp.FirstName}} 
+                <span id="{{emp.Id}}" class="alignright" ng-click="GetLeaves(emp.Id)" ng-show="!(tblShow == emp.Id)"> &#10010;</span> 
+                <span id="{{emp.Id}}" class="alignright" ng-show="tblShow == emp.Id"> &#9866; </span> 
+            
+            </span>
+            <table id="{{emp.Id}}" class="w3-table w3-striped w3-bordered w3-border w3-hoverable" ng-show="tblShow == emp.Id"> 
+                <thead class="w3-yellow">
+                    <tr>
+                        <td style="display:none">Id</td>
+                        <td ng-click="orderByThis('LeaveFrom')">From</td>
+                        <td>To</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tr ng-repeat="leave in emp.LeaveDetails | orderBy:customOrderBy | orderBy:Id">   
+                    <td style="display:none">{{leave.Id}}</td>
+                    <td>{{leave.LeaveFrom | date:'dd/MM/yyyy' }}</td>
+                    <td>{{leave.LeaveTo| date:'dd/MM/yyyy' }}</td>
+                    <td>{{leave.Status }}</td>
+                    <td>
+                        <span class="btn-default" ng-show="isLogedIn" ng-click="editLeave(leave)">&#9998;</span>
+                        <span class="btn-danger" ng-show="isLogedIn" ng-click="DeleteLeave(leave.Id)">&#10006;</span>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+
+
+    <!--<button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>-->
+
+</div>
+<style>
+
+    /* left and right align in same line*/
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+
+</style>
+

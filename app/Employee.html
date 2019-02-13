@@ -1,0 +1,98 @@
+﻿<div class="w3-container w3-light-grey w3-padding-16 w3-animate-top">
+    <h3 class="w3-border-bottom w3-border-light-gre w3-text-red">Add Employee details</h3>
+
+    <div ng-show="isSaved" ng-class="myDynamicClass">
+        <!--<div align="right" ng-click="isSaved=!isSaved" style="cursor:pointer"><h3>{{msgHeader}}!</h3> &#10006;</div>-->
+        <div><span align="right" class="alignright" style="cursor:pointer" ng-click="isSaved=!isSaved"> &#10006;</span><h3>{{msgHeader}}!</h3> </div>
+
+        <p>{{message}}</p>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="row">
+            <div class="col-25">
+                <label class="w3-text-red"><b>First Name   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="FirstName" placeholder="First Name" required />
+            </div>
+            <div class="col-25">
+                <label class="w3-text-red"><b>Last Name   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="LastName" placeholder="Last Name" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="w3-text-red"><b>Date Of Birth   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="date" ng-model="DateOfBirth" placeholder="Date Of Birth" required />
+            </div>
+            <div class="col-25">
+                <label class="w3-text-red"><b>Email   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="Email" placeholder="Email" required />
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="w3-text-red"><b>Phone   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="Phone" placeholder="Phone" required />
+            </div>
+            <div class="col-25">
+                <label class="w3-text-red"><b>Designation   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="Designation" placeholder="Designation" required />
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="w3-text-red"><b>Department   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="Department" placeholder="Department" required />
+            </div>
+            <div class="col-25">
+                <label class="w3-text-red"><b>Date of joining   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="date" ng-model="JoiningDate" placeholder="JoiningDate" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="w3-text-red"><b>Skills   </b></label>
+            </div>
+            <div class="col-25">
+                <input type="text" ng-model="Skills" placeholder="Skills" required />
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <!--<label for="fname">First Name</label>-->
+            </div>
+            <div class="col-75">
+                <button class="w3-button w3-yellow w3-section w3-text-red" ng-click="Add()" type="submit">
+                    <b> SAVE</b>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<link href="app/css/form.css" rel="stylesheet" />
