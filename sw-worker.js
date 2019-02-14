@@ -11,26 +11,6 @@ workbox.routing.registerRoute(
   workbox.strategies.cacheFirst()
 );
 
-workbox.routing.registerRoute(
-  // Cache image files     (regex not working)
-  /.*\.(?:png|jpg|jpeg|svg|gif)/,
-  // Use the cache if it's available
-  workbox.strategies.cacheFirst(
-  //  {
-  //    // Use a custom cache name
-  //    cacheName: 'image-cache',
-  //    plugins: [
-  //      new workbox.expiration.Plugin({
-  //          // Cache only 20 images
-  //          maxEntries: 20,
-  //          // Cache for a maximum of a week
-  //          maxAgeSeconds: 7 * 24 * 60 * 60,
-  //      })
-  //    ],
-  //}
-  )
-);
-
 workbox.precaching.precacheAndRoute([
     '/app/css/style.css',
     '/app/css/form.css',
@@ -44,7 +24,7 @@ workbox.precaching.precacheAndRoute([
       '/app/images/icons/icon-512x512.png',
      '/manifest.json',
      { url: './', revision: '383675' },
-      { url: '/index.html', revision: '383676' }//,
+      { url: './index.html', revision: '383676' }//,
     //{ url: '/index.html', revision: '383676' }
     // { url: 'app/home.html', revision: '383677' }
 
