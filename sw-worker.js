@@ -43,7 +43,7 @@ workbox.precaching.precacheAndRoute([
       '/app/Scripts/Controller/EmployeeController.js',
       '/app/images/icons/icon-512x512.png',
      '/manifest.json',
-     { url: '/', revision: '383675' },
+     { url: './', revision: '383675' },
       { url: '/index.html', revision: '383676' }//,
     //{ url: '/index.html', revision: '383676' }
     // { url: 'app/home.html', revision: '383677' }
@@ -84,15 +84,15 @@ workbox.routing.registerRoute(
 //  workbox.strategies.cacheFirst()
 //);
 
-self.addEventListener('fetch', function (event) {
-    event.respondWith(
-      caches.open('cache-dynamic').then(function (cache) {
-          return cache.match(event.request).then(function (response) {
-              return response || fetch(event.request).then(function (response) {
-                  cache.put(event.request, response.clone());
-                  return response;
-              });
-          });
-      })
-    );
-});
+//self.addEventListener('fetch', function (event) {
+ //   event.respondWith(
+ //     caches.open('cache-dynamic').then(function (cache) {
+   //       return cache.match(event.request).then(function (response) {
+    //          return response || fetch(event.request).then(function (response) {
+     //             cache.put(event.request, response.clone());
+//                  return response;//
+              //});
+//          });
+//      })
+ //   );
+//});
