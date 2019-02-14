@@ -50,6 +50,25 @@ workbox.precaching.precacheAndRoute([
 
 ]);
 
+workbox.routing.registerRoute([
+    '/app/css/style.css',
+    '/app/css/form.css',
+    '/app/Scripts/angular.min.js',
+     '/app/Scripts/angular-route.min.js',
+     '/app/Scripts/Module/Module.js',
+      '/app/Scripts/Services/LeaveServices.js',
+       '/app/Scripts/Services/EmployeeServices.js',
+     '/app/Scripts/Controller/LeaveController.js',
+      '/app/Scripts/Controller/EmployeeController.js',
+      '/app/images/icons/icon-512x512.png',
+     '/manifest.json',
+     { url: './', revision: '383675' },
+      { url: './index.html', revision: '383676' }//,
+    //{ url: '/index.html', revision: '383676' }
+    // { url: 'app/home.html', revision: '383677' }
+
+]);
+
 
 //workbox.routing.registerRoute(
 //   { url: 'app/LeaveList.html', revision: '383678' },
