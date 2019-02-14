@@ -12,24 +12,24 @@ workbox.routing.registerRoute(
 );
 
 workbox.precaching.precacheAndRoute([
-    '/app/css/style.css',
-    '/app/css/form.css',
-    '/app/Scripts/angular.min.js',
-     '/app/Scripts/angular-route.min.js',
-     '/app/Scripts/Module/Module.js',
+    '/lmspwa/app/css/style.css',
+    '/lmspwa/app/css/form.css',
+    '/lmspwa/app/Scripts/angular.min.js',
+     '/lmspwa/app/Scripts/angular-route.min.js',
+     '/lmspwa/app/Scripts/Module/Module.js',
       '/app/Scripts/Services/LeaveServices.js',
-       '/app/Scripts/Services/EmployeeServices.js',
-     '/app/Scripts/Controller/LeaveController.js',
-      '/app/Scripts/Controller/EmployeeController.js',
-      '/app/images/icons/icon-512x512.png',
-     '/manifest.json',
-     { url: './', revision: '383675' },
-      { url: './index.html', revision: '383676' }//,
+       '/lmspwa/app/Scripts/Services/EmployeeServices.js',
+     '/lmspwa/app/Scripts/Controller/LeaveController.js',
+      '/lmspwa/app/Scripts/Controller/EmployeeController.js',
+      '/lmspwa/app/images/icons/icon-512x512.png',
+     '/lmspwa/manifest.json',
+     { url: 'https://baghel2.github.io/lmspwa/', revision: '383675' },
+      { url: 'https://baghel2.github.io/lmspwa/index.html', revision: '383676' }//,
     //{ url: '/index.html', revision: '383676' }
     // { url: 'app/home.html', revision: '383677' }
 
 ]);
-
+/*
 workbox.routing.registerRoute([
     '/app/css/style.css',
     '/app/css/form.css',
@@ -48,7 +48,7 @@ workbox.routing.registerRoute([
     // { url: 'app/home.html', revision: '383677' }
 
 ]);
-
+*/
 
 //workbox.routing.registerRoute(
 //   { url: 'app/LeaveList.html', revision: '383678' },
